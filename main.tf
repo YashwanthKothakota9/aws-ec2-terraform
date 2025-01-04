@@ -172,10 +172,14 @@ resource "aws_instance" "myapp-server"{
         private_key = file(var.private_key_location)
     }
 
+    provisioner "file"{
+        source = "start-script.sh"
+        destination = "/home/ec2-user/start-script-on-ec2.sh"
+    }
+
     provisioner "remote-exec"{
         inline = [
-            "export ENV=dev"
-            "mkdir newdir"
+            "/home/ec2-user/start-script-on-ec2.sh"
         ]
     }
 
