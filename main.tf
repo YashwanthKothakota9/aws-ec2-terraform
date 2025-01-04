@@ -183,6 +183,10 @@ resource "aws_instance" "myapp-server"{
         ]
     }
 
+    provisioner "local-exec"{
+        command = "echo ${self.public_ip} > ip_address.txt"
+    }
+
     tags={
         Name: "${var.env_prefix}-server"
     }
