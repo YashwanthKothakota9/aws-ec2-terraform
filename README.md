@@ -57,7 +57,7 @@ The Terraform script provisions the following AWS resources:
 ## How to Use
 ### Step 1: Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/YashwanthKothakota9/aws-ec2-terraform
 cd aws-ec2-terraform
 ```
 
